@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Orchidea Pro Medium';
+	src: url(../font/OrchideaPro-MediumItalic.ttf);
+}
+
+@font-face {
+	font-family: 'Manrope Medium';
+	src: url(../font/manrope.medium.otf);
+}
+
+@font-face {
+	font-family: 'Manrope Bold';
+	src: url(../font/manrope-bold.ttf);
+}
+
+@font-face {
+	font-family: 'Roboto Regular';
+	src: url(../font/ofont.ru_Roboto.ttf);
+}
+
+@font-face {
+	font-family: 'Orchidea Pro Medium Italic';
+	src: url(../font/OrchideaPro-MediumItalic.ttf);
+}
