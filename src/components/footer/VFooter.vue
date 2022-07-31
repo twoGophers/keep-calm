@@ -24,4 +24,10 @@
         color: #FFFFFF;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .footer{
+        height: 100px;
+    }
+}
 </style>

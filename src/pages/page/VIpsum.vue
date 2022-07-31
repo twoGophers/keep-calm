@@ -6,7 +6,7 @@
         <div class="ipsum-slider">
             <swiper
                 :slidesPerView="slidesPerVue"
-                :spaceBetween="40"
+                :spaceBetween="20"
                 :loop="true"
                 :navigation="true"
                 :centeredSlides= "true"
@@ -14,6 +14,7 @@
                 :freeMode="true"
                 :thumbs="{ swiper: thumbsSwiper }"
                 @swiper="onSwiper"
+                :breakpoints="swiperOptions.breakpoints"
                 class="mySwiper"
                 >
                 <swiper-slide 
@@ -181,7 +182,32 @@ export default {
         thumbsSwiper,
         setThumbsSwiper,
         onSwiper: instance => swiper.value = instance,
-      };
+        swiperOptions: {
+            breakpoints: {       
+                320: {       
+                    slidesPerView: 1.3,
+                    spaceBetween: 20     
+                },   
+                480: {       
+                    slidesPerView: 2,
+                    spaceBetween: 20     
+                },         
+                768: {       
+                    slidesPerView: 3,       
+                    spaceBetween: 20     
+                },   
+            
+                1024: {       
+                    slidesPerView: 4,       
+                    spaceBetween: 20     
+                },
+                1400: {       
+                    slidesPerView: 5,       
+                    spaceBetween: 30     
+                }  
+            } 
+        }
+    }
   },
 
   methods: {
@@ -193,6 +219,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('../../assets/style/Сonstantly.scss');
 .ipsum {
     .title{
         margin-left: 10%;
@@ -224,6 +251,7 @@ export default {
                     min-height: 500px;
                     background-repeat: no-repeat;
                     position: relative;
+                    background-size: cover;
                     .swiper-slide-bottomBlock {
                         width: 100%;
                         padding: 35px 30px;
@@ -313,8 +341,13 @@ export default {
                     width: 60%;
                     display: flex;
                     justify-content: space-between;
-                    background: #141414;
+                    align-items: center;
+                    background: #686868;
                     padding: 10px;
+                    border-radius: 3px;
+                    button {
+                        display: flex;
+                    }
                 }
             }
             .mySwiper-big {
@@ -341,5 +374,146 @@ export default {
             }
         }
     }
+}
+
+@media screen and (max-width : 1400px)  {
+    .ipsum .title  {
+        margin-left: 0px;
+        h1 {
+            font-size: 54px;
+        }
+    }
+    .ipsum .lorem-block .lorem-content-name {
+        font-size: 34px;
+    }
+    .ipsum {
+        .ipsum-slider {
+            .mySwiper {
+                .swiper-button-prev,
+                .swiper-button-next{
+                    width: 10%;
+                }
+            }
+        }
+    }
+    .ipsum .ipsum-slider .mySwiper .swiper-slide .swiper-slide-block .swiper-slide-bottomBlock p {
+        font-size: 20px;
+    }
+    .ipsum .slider-big .slider-big-container {
+        width: 66%;
+    }
+}
+
+@media screen and (max-width : 1040px)  {
+    .ipsum .slider-big .slider-big-container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width : 1024px)  {
+    .ipsum .title {
+        h1 {
+            font-size: 42px;
+        }
+    }
+    .ipsum {
+        .ipsum-slider {
+            .mySwiper {
+                .swiper-button-prev,
+                .swiper-button-next{
+                    width: 32%;
+                }
+            }
+        }
+    }
+    .ipsum .ipsum-slider .slider-navigation .slider-navigation-block {
+        width: 20%;
+    } 
+    .ipsum .slider-big .swiper-big-close {
+        right: 20px;
+        top: 20px;
+    }
+}
+
+@media screen and (max-width : 830px)  {
+    .ipsum .slider-big .slider-big-container .slider-navigation-big {
+        padding-bottom: 140px;
+        height: 100%; 
+    }
+}
+
+@media screen and (max-width : 768px)  {
+    .ipsum {
+        .ipsum-slider {
+            .mySwiper {
+                .swiper-button-prev,
+                .swiper-button-next{
+                    width: 25%;
+                }
+            }
+        }
+    } 
+    .ipsum .ipsum-slider .slider-navigation .slider-navigation-block {
+        width: 30%;
+    }
+    .ipsum .title h1 {
+        margin-left: 2rem;
+        font-size: 36px;
+        display: flex;
+        flex-wrap: wrap;
+    } 
+}
+
+@media screen and (max-width : 670px)  {
+    .ipsum .slider-big .slider-big-container {
+        width: 100%;
+    }
+    .ipsum .slider-big .slider-big-container .mySwiper-big .swiper-slide-big .swiper-slide-bottomBlock-big{
+        padding: 0px 20px;
+
+    }
+}
+
+@media screen and (max-width : 600px)  {
+    .ipsum .slider-big .slider-big-container .slider-navigation-big .slider-navigation-block-big {
+        width: 100%;
+        margin-right: 20px;
+    }
+    .ipsum .slider-big .slider-big-container .slider-navigation-big {
+        width: 130px;
+        padding-bottom: 160px;
+    }
+}
+
+@media screen and (max-width : 500px)  {
+    .ipsum .slider-big .slider-big-container .slider-navigation-big {
+        height: 710px;
+    }
+    .ipsum .slider-big .slider-big-container {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width : 480px)  {
+    .ipsum {
+        .title {
+            margin-left: 1rem;
+            h1 {
+                margin-left: 0rem;
+                font-size: 26px;
+            }
+        }
+        .ipsum-slider {
+            .mySwiper {
+                .swiper-button-prev,
+                .swiper-button-next{
+                    width: 10%;
+                }
+            }
+        }
+    }
+    .ipsum .ipsum-slider .mySwiper .swiper-slide .swiper-slide-block .swiper-slide-bottomBlock {
+        padding: 20px;
+    }     
 }
 </style>
