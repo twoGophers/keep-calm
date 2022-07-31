@@ -317,7 +317,7 @@ export default {
         left: 0;
         top: 0;
         overflow-y: scroll;
-        padding: 100px 0;
+        padding: 20px 0;
         background: #141414;
         z-index: 100;
         .slider-big-block {
@@ -474,7 +474,7 @@ export default {
     .ipsum .slider-big .slider-big-block .slider-big-container {
         width: 100%;
     }
-    .ipsum .slider-big .slider-big-container .mySwiper-big .swiper-slide-big .swiper-slide-bottomBlock-big{
+    .ipsum .slider-big  .slider-big-block .slider-big-container .mySwiper-big .swiper-slide-big .swiper-slide-bottomBlock-big{
         padding: 0px 20px;
 
     }
@@ -482,11 +482,12 @@ export default {
 
 @media screen and (max-width : 600px)  {
     .ipsum .slider-big .slider-big-container .slider-navigation-big .slider-navigation-block-big {
-        width: 100%;
+        width: 160px;
         margin-right: 20px;
     }
-    .ipsum .slider-big .slider-big-container .slider-navigation-big {
-        width: 130px;
+    .ipsum .slider-big .slider-big-block .slider-big-container .slider-navigation-big {
+        width: 30%;
+        min-width: 130px;
         padding-bottom: 160px;
     }
 }
